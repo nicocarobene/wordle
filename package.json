@@ -7,14 +7,14 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "pnpm exec playwright test"
+    "test": "pnpm exec playwright test",
+    "eslint": "eslint ./src/**/*.{ts,tsx} --fix"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.0",
     "lit": "^2.7.6"
   },
   "devDependencies": {
-
     "@playwright/test": "^1.39.0",
     "@types/canvas-confetti": "^1.6.2",
     "@types/node": "^20.8.9",

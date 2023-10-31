@@ -1,4 +1,4 @@
-const eslintConfig = {
+module.exports = {
     "env": {
         "browser": true,
         "es2021": true
@@ -24,8 +24,7 @@ const eslintConfig = {
     },
     "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/strict-boolean-expressions": "off"
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/no-floating-promises": "off"
     }
 }
-
-export default eslintConfig;

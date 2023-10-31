@@ -120,7 +120,6 @@ export class WordleWord extends LitElement {
         const indexLetter = word.findIndex(l => l === letter)
         word[indexLetter] = ' '
         this.setExistLetter(index)
-        return;
       }
     })
     this.classList.add('sended')
@@ -128,7 +127,7 @@ export class WordleWord extends LitElement {
     return this.isSolved()
   }
 
-  setExactLetter (index: number ) {
+  setExactLetter (index: number) {
     this.shadowRoot?.querySelector(`.letter:nth-child(${index + 1})`)?.classList.add('exact')
   }
 
@@ -141,7 +140,7 @@ export class WordleWord extends LitElement {
     return letters.every(letter => letter.classList.contains('exact'))
   }
 
-  setRaeLink(word:string){
+  setRaeLink (word: string) {
     const link = document.createElement('a')
     link.classList.add('rae')
     link.href = `https://dle.rae.es/${word}`
@@ -150,7 +149,7 @@ export class WordleWord extends LitElement {
     this.shadowRoot?.appendChild(link)
     setTimeout(() => {
       link.classList.add('visible')
-    }, 500) 
+    }, 500)
   }
 
   removeLetter () {
@@ -159,8 +158,8 @@ export class WordleWord extends LitElement {
   }
 
   addLetter (letter: string) {
-    const index= this.toString().length
-    const box= this.shadowRoot?.querySelectorAll('.letter')[index]
+    const index = this.toString().length
+    const box = this.shadowRoot?.querySelectorAll('.letter')[index]
     box?.classList.add('pop')
     const newWord = this.toString() + letter
     this.word = newWord.padEnd(MAX_LETTERS, ' ')

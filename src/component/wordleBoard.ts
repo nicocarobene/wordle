@@ -7,12 +7,12 @@ import WORDS from '../assets/words.json'
 
 export const audioPlayer = {
   playLose: () => {
-    new Audio("sound/lose.mp3").play()
+    new Audio('sound/lose.mp3').play()
   },
   playWin: () => {
-    new Audio("sound/win.mp3").play()
+    new Audio('sound/win.mp3').play()
   }
-};
+}
 
 @customElement('wordle-board')
 export class Wordle extends LitElement {
