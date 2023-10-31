@@ -5,7 +5,6 @@ import './wordleWord.ts'
 import './wordleKeyboard.ts'
 import WORDS from '../assets/words.json'
 
-
 export const audioPlayer = {
   playLose: () => {
     new Audio("sound/lose.mp3").play()
