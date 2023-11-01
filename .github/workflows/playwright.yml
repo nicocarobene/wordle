@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Cancel Previous Redundant Builds
-        uses: styfle/cancel-workflow-action@0.9.1
+        uses: styfle/cancel-workflow-action@latest
         with:
           access_token: ${{ github.token }}
   install:
@@ -73,7 +73,7 @@ jobs:
         with:
           name: dist
           path: dist
-  test:
+  test-playwright:
     needs: [install ,lint,build]
     timeout-minutes: 60
     runs-on: ubuntu-latest
@@ -93,8 +93,6 @@ jobs:
       run: pnpm install --frozen-lockfile
     - name: Install Playwright Browsers
       run: pnpm exec playwright install --with-deps
-    - name: Run dev server
-      run: pnpm run dev
     - name: Run Playwright tests
       run: pnpm exec playwright test
     - uses: actions/upload-artifact@v3
