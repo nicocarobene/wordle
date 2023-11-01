@@ -1,4 +1,5 @@
 name: Deployment Wordle
+run-name: ${{ github.actor }} is testing out ${{ github.event_name }}
 on:
   push:
     branches: [ main, master ]
@@ -26,6 +27,8 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
+      - name: Setup pnpm
+        run: npm install -g pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
   lint:
